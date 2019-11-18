@@ -7,7 +7,7 @@
     <title>Document</title>
     <style>
       .max {
-        margin: 100px auto;
+        margin: 0 auto;
         width: 300px;
         height: 400px;
         text-align: center;
@@ -31,16 +31,58 @@
     </div>
   </body>
   <script src="./zepto.js"></script>
+  <!-- // 实现移动端的滑动事件，要引入touch的js文件，否则无效 -->
+  <script src="./touch.js"></script>
   <script>
+    //  尝试随机颜色
+    function random() {
+      let random = Math.random();
+      random = random * 251;
+      random = Math.floor(random);
+      //   console.log(random);
+      return random;
+    }
+    //   random();
+    // let r = random();
+    // let g = random();
+    // let b = random();
+    //   console.log(r,g,b);
+
+    // let rgb = "rgb(" + r + "," + g + "," + b + ")";
+    //   console.log(rgb);
+
+    //   let box = document.querySelector('.box');
+    //   let btn = document.querySelector('input')
+    //   btn.onclick = function(){
+    //     box.style.backgroundColor = rgb;
+    //   }
+
     //   获取元素的方式：$(选择器)，而且返回的是一个伪数组
       let box = $('.box');
       let btn = $('input');
     //   console.log(box,btn);
     //  注册事件的方式：伪数组.on（事件类型，事件处理程序）
     btn.on('click',function(){
+        // 调用随机颜色函数
+        random();
+        let r = random();
+        let g = random();
+        let b = random();
+        let rgb = "rgb(" + r + "," + g + "," + b + ")";
         //  修改样式的方式：伪数组.css（属性名，属性值）
-        box.css('backgroundColor','yellow')
+        box.css('backgroundColor',rgb)
     })
-      
+
+    //  注册移动端移动事件
+    box.on('swipe',function(){
+        // 调用随机颜色函数
+        random();
+        let r = random();
+        let g = random();
+        let b = random();
+        let rgb = "rgb(" + r + "," + g + "," + b + ")";
+        //  修改样式的方式：伪数组.css（属性名，属性值）
+        box.css('backgroundColor',rgb)
+    })
   </script>
 </html>
