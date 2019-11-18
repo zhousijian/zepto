@@ -30,4 +30,17 @@
       <div class="box"></div>
     </div>
   </body>
+  <script src="./zepto.js"></script>
+  <script>
+    //   获取元素的方式：$(选择器)，而且返回的是一个伪数组
+      let box = $('.box');
+      let btn = $('input');
+    //   console.log(box,btn);
+    //  注册事件的方式：伪数组.on（事件类型，事件处理程序）
+    btn.on('click',function(){
+        //  修改样式的方式：伪数组.css（属性名，属性值）
+        box.css('backgroundColor','yellow')
+    })
+      
+  </script>
 </html>
